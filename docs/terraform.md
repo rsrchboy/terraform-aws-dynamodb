@@ -36,6 +36,7 @@
 | global\_secondary\_index\_map | Additional global secondary indexes in the form of a list of mapped values | <pre>list(object({<br>    hash_key           = string<br>    name               = string<br>    non_key_attributes = list(string)<br>    projection_type    = string<br>    range_key          = string<br>    read_capacity      = number<br>    write_capacity     = number<br>  }))</pre> | `[]` | no |
 | hash\_key | DynamoDB table Hash Key | `string` | n/a | yes |
 | hash\_key\_type | Hash Key type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data | `string` | `"S"` | no |
+| kms\_key\_arn | ARN of KMS key to use for server-side encryption | `string` | `""` | no |
 | local\_secondary\_index\_map | Additional local secondary indexes in the form of a list of mapped values | <pre>list(object({<br>    name               = string<br>    non_key_attributes = list(string)<br>    projection_type    = string<br>    range_key          = string<br>  }))</pre> | `[]` | no |
 | name | Solution name, e.g. 'app' or 'jenkins' | `string` | `""` | no |
 | namespace | Namespace, which could be your organization name or abbreviation, e.g. 'eg' or 'cp' | `string` | `""` | no |
