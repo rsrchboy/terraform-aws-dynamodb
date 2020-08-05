@@ -106,6 +106,12 @@ variable "enable_encryption" {
   description = "Enable DynamoDB server-side encryption"
 }
 
+variable "kms_key_arn" {
+    type        = string
+    default     = ""
+    description = "ARN of KMS key to use for server-side encryption"
+}
+
 variable "enable_point_in_time_recovery" {
   type        = bool
   default     = true

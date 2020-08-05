@@ -66,7 +66,8 @@ resource "aws_dynamodb_table" "default" {
   stream_view_type = var.enable_streams ? var.stream_view_type : ""
 
   server_side_encryption {
-    enabled = var.enable_encryption
+    enabled     = var.enable_encryption
+    kms_key_arn = length(var.kms_key_arn) > 0 ? var.kms_key_arn : null
   }
 
   point_in_time_recovery {
